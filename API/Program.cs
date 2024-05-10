@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DataContext>(opt =>
 {
         // opt.UseSqlite("Data Source=reactivities.db");
-        opt.UseNpgsql("Server=localhost;Port=5432;User Id=postgres;Password=postgresql;Database=reactivities.db");
+        opt.UseNpgsql("Server=product.database;Port=5432;User Id=postgres;Password=postgresql;Database=reactivities.db");
 });
 
 var app = builder.Build();
@@ -25,7 +25,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
