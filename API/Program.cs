@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Npgsql;
 using Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,9 +12,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DataContext>(opt =>
 {
-    opt.UseSqlite("Data Source=reactivities.db");
+        // opt.UseSqlite("Data Source=reactivities.db");
+        opt.UseNpgsql("Server=localhost;Port=5432;User Id=postgres;Password=postgresql;Database=reactivities.db");
 });
-
 
 var app = builder.Build();
 
