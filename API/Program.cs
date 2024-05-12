@@ -15,6 +15,14 @@ builder.Services.AddDbContext<DataContext>(opt =>
         // opt.UseSqlite("Data Source=reactivities.db");
         opt.UseNpgsql("Server=product.database;Port=5432;User Id=postgres;Password=postgresql;Database=reactivities.db");
 });
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy("CorsPolicy", policy =>
+    {
+        policy.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:3000");
+    });
+});
+
 
 var app = builder.Build();
 
@@ -24,7 +32,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors("CorsPolicy");
 //app.UseHttpsRedirection();
 
 app.UseAuthorization();
