@@ -1,6 +1,8 @@
+using Application.Activities;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
 using Persistence;
+using System.Collections.Generic;
 
 var builder = WebApplication.CreateBuilder(args);
  
@@ -22,7 +24,7 @@ builder.Services.AddCors(opt =>
         policy.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:3000");
     });
 });
-
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(List.Handler).Assembly));
 
 var app = builder.Build();
 
