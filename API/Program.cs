@@ -1,4 +1,5 @@
 using Application.Activities;
+using Application.Core;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
 using Persistence;
@@ -25,6 +26,7 @@ builder.Services.AddCors(opt =>
     });
 });
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(List.Handler).Assembly));
+builder.Services.AddAutoMapper(typeof(MappingProfiles).Assembly); //this will look into assembly(project) and find Mapping profile to use AutoMapper type of mapping class
 
 var app = builder.Build();
 
