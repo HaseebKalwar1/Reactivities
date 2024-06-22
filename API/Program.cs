@@ -21,6 +21,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseCors("CorsPolicy");
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 //app.UseHttpsRedirection();
 
 app.UseAuthorization();
