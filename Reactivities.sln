@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Persistence\
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{DB1EFF9B-1701-49A8-9C42-91A2DCF722EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "..\Infrastructure\Infrastructure.csproj", "{8433419E-275C-4FEF-97C7-1A3EBADB6EF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,8 +41,15 @@ Global
 		{DB1EFF9B-1701-49A8-9C42-91A2DCF722EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB1EFF9B-1701-49A8-9C42-91A2DCF722EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB1EFF9B-1701-49A8-9C42-91A2DCF722EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8433419E-275C-4FEF-97C7-1A3EBADB6EF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8433419E-275C-4FEF-97C7-1A3EBADB6EF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8433419E-275C-4FEF-97C7-1A3EBADB6EF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8433419E-275C-4FEF-97C7-1A3EBADB6EF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A183B05-9340-4697-98D0-90E4831AC471}
 	EndGlobalSection
 EndGlobal
