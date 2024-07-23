@@ -92,4 +92,13 @@ export default class ProfileStore {
             this.loading = false;
         }
     }
+    updateProfile = async (profile: Partial<Profile>) => {
+        this.loading= true;
+        try{
+            await agent.Profiles.updateProfile(profile);
+        }catch(error){
+            console.log(error);
+            runInAction(() => this.loading = false)
+        }
+    }
 }

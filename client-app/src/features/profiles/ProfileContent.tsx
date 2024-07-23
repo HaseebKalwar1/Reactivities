@@ -9,7 +9,7 @@ interface Props {
 
 export default observer(function ProfileContent({profile}: Props) {
     const panes = [
-        { menuItem: 'About', render: () => <Tab.Pane>About Content</Tab.Pane> },
+        {menuItem: 'About', render: () => <ProfileAbout />},
         { menuItem: 'Photos', render: () => <ProfilePhoto profile={profile} />  },
         { menuItem: 'Events', render: () => <Tab.Pane>Events Content</Tab.Pane> },
         {
