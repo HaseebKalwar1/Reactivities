@@ -6,9 +6,9 @@ import { useStore } from '../../app/stores/store';
 import LoginForm from '../users/LoginForm';
 import RegisterForm from '../users/RegisterForm';
 
-export default observer (function HomePage() {
+
+export default observer(function HomePage() {
     const { userStore, modalStore } = useStore();
-    
     return (
         <Segment inverted textAlign='center' vertical className='masthead' >
             <Container text>
@@ -37,5 +37,4 @@ export default observer (function HomePage() {
             </Container>
         </Segment>
     )
-}
-)
+})
