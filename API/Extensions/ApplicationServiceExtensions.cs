@@ -20,13 +20,13 @@ namespace API.Extensions
             services.AddSwaggerGen();
             services.AddDbContext<DataContext>(opt =>
             {
-                // opt.UseSqlite("Data Source=reactivities.db");
+               // opt.UseNpgsql(config.GetConnectionString("DefaultConnection"));
                 opt.UseNpgsql("Server=product.database;Port=5432;User Id=postgres;Password=postgresql;Database=reactivities.db");
             });
             services.AddCors(opt =>
             {
                 opt.AddPolicy("CorsPolicy", policy =>
-                {
+                {   
                     policy.AllowAnyMethod()
                     .AllowAnyHeader()
                     .AllowCredentials()

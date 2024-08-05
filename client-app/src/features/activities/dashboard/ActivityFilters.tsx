@@ -1,5 +1,4 @@
 import Calendar from 'react-calendar';
-import React from 'react';
 import { Menu, Header } from 'semantic-ui-react';
 import { useStore } from '../../../app/stores/store';
 import { observer } from 'mobx-react-lite';

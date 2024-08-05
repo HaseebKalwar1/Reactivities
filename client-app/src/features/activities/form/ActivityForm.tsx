@@ -1,11 +1,11 @@
 import { observer } from 'mobx-react-lite';
-import { ChangeEvent, useEffect, useState } from 'react';
+import {  useEffect, useState } from 'react';
 import { Button, Form, Header, Segment } from "semantic-ui-react";
 import { useStore } from '../../../app/stores/store';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import LoadingComponent from '../../../app/layout/LoadingComponent';
 import {v4 as uuid} from 'uuid';
-import { Activity, ActivityFormValues } from '../../../app/models/activity';
+import {  ActivityFormValues } from '../../../app/models/activity';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import MyTextInput from '../../../app/common/form/MyTextInput';
@@ -46,11 +46,6 @@ export default observer(function ActivityForm() {
         } else {
             updateActivity(activity).then(() => navigate(`/activities/${activity.id}`))
         }
-    }
-
-    function handleInputChange(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
-        const { name, value } = event.target;
-        setActivity({ ...activity, [name]: value })
     }
 
     if (loadingInitial) return <LoadingComponent content='Loading activity...' />

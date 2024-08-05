@@ -1,15 +1,15 @@
-import { Navigate, RouteObject, Routes, createBrowserRouter } from "react-router-dom";
+import { Navigate, RouteObject, createBrowserRouter } from "react-router-dom";
 import App from "../layout/App";
-import HomePage from "../../features/home/HomePage";
 import ActivityDashboard from "../../features/activities/dashboard/ActivityDashboard";
 import ActivityForm from "../../features/activities/form/ActivityForm";
 import ActivityDetails from "../../features/activities/details/ActivityDetails";
 import TestErrors from "../../features/errors/TestErrors";
 import NotFound from "../../features/errors/NotFound";
 import ServerError from "../../features/errors/ServerError";
-import LoginForm from "../../features/users/LoginForm";
 import ProfilePage from "../../features/profiles/ProfilePage";
 import RequireAuth from "./RequireAuth";
+import LoginForm from "../../features/users/LoginForm";
+import RegisterForm from "../../features/users/RegisterForm";
 
 export const routes: RouteObject[] = [
     {
@@ -24,6 +24,8 @@ export const routes: RouteObject[] = [
                 {path: 'profiles/:username', element: <ProfilePage />},
                 {path: 'errors', element: <TestErrors />}
             ]},
+            {path: 'login', element: <LoginForm />},
+            {path: 'register', element: <RegisterForm />},
             {path: 'not-found', element: <NotFound />},
             {path: 'server-error', element: <ServerError />},
             {path: '*', element: <Navigate replace to='/not-found' />},
