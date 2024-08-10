@@ -3,6 +3,7 @@ version: '3.4'
 services:
   api:
     image: ${DOCKER_REGISTRY-}api
+    container_name: Reactivities
     build:
       context: .
       dockerfile: API/Dockerfile
@@ -23,7 +24,7 @@ services:
       - 5432:5432  
  
   pgadmin:
-    container_name: pgadmin14_container
+    container_name: pgadmin
     image: dpage/pgadmin4
     restart: always
     environment:
